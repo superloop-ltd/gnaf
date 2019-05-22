@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+function extract_fields {
+    sed -n "/^CREATE TABLE.*\`$1\`/,/ENGINE/p" GNAF_structure.sql \
+        | grep -v ENGINE \
+        | grep -v CREATE\ TABLE
+}
+
+function sql_fields {
+    echo -n "("
+    extract_fields $table \
+        | sed '/DEFAULT NULL/ s/`\(.*\)`/`@\1`/' \
+        | cut -d \` -f2 \
+        | paste -sd , - \
+        | perl -pe 'chomp'
+    echo ")"
+}
+
+function sql_set_null {
+    extract_fields $table \
+        | grep DEFAULT\ NULL \
+        | cut -d \` -f2 \
+        | sed 's/.*/\0 = NULLIF(@\0, "")/g ; $!s/$/,/'
+}
+
+cat GNAF_structure.sql
+
+find . -name *.psv | while read -r file; do
+    table=$(basename "$file" | sed 's/_psv\|.psv//g' \
+        | sed 's/Authority_Code_\|ACT_\|NSW_\|SA_\|NT_\|OT_\|NSW_\|VIC_\|QLD_\|TAS_\|WA_//g')
+
+    echo "LOAD DATA LOCAL INFILE '$file'"
+    echo "INTO TABLE $table FIELDS TERMINATED BY '|' IGNORE 1 LINES"
+
+    sql_fields
+
+    set_null=$(sql_set_null)
+    if [ ! -z "$set_null" ]
+    then
+        echo -n "SET $set_null"
+    fi
+
+    echo ";"
+    echo
+done
+
+cat GNAF_fixes.sql GNAF_indexes.sql GNAF_address_search.sql
