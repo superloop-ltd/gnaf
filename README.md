@@ -27,7 +27,7 @@ wget https://data.gov.au/data/dataset/19432f89-dc3a-4ef3-b943-5326ef1dbecc/resou
 unzip `basename !$`
 ```
 
-Create database:
+Ensure that you have at least 20 GB available on your `/var/lib/mysql` partition. Create database:
 
 ```
 GNAFDB=GNAF_201905
@@ -37,16 +37,10 @@ mysql -u root -e "CREATE DATABASE $GNAFDB"
 Pipe the generate SQL script into the MySQL database:
 
 ```
-./import-mysql | mysql -u root $GNAFDB
+time ./import-mysql | tee /dev/tty | mysql -u root $GNAFDB```
 ```
 
-Or, if you want to watch the queries as they run and receive a record of how long the import took to execute in seconds:
-
-```
-time ./import-mysql | tee /dev/tty | mysql -u root $GNAFDB
-```
-
-Allow time for the import to process. It could take more than an hour.
+Allow a while for the import to process. It could take more than an hour depending on your hardware.
 
 ## License ##
 
