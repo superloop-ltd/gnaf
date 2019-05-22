@@ -18,7 +18,8 @@ cd gnaf
 git clean -xdf
 ```
 
-The download link can be found at https://data.gov.au/dataset/geocoded-national-address-file-g-naf under 'Files and APIs' --> 'PSMA Geocoded National Address File (G-NAF)(ZIP).'
+The download link can be found at [PSMA Geocoded National Address File (G-NAF)
+](https://data.gov.au/dataset/geocoded-national-address-file-g-naf) under 'Files and APIs', then 'PSMA Geocoded National Address File (G-NAF)(ZIP).'
 
 Download and unzip:
 
@@ -37,7 +38,7 @@ mysql -u root -e "CREATE DATABASE $GNAFDB"
 Pipe the generate SQL script into the MySQL database:
 
 ```
-time ./import-mysql | tee /dev/tty | mysql -u root $GNAFDB```
+time ./import-mysql | tee /dev/tty | mysql -u root $GNAFDB
 ```
 
 Allow a while for the import to process. It could take more than an hour depending on your hardware.
