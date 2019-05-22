@@ -39,13 +39,6 @@ time ./import-mysql | tee /dev/tty | mysql -u root GNAF_201802
 
 Allow time for the import to process. It could take more than an hour.
 
-Optionally, import postcode data:
-
-```
-cpan LWP::Simple Text::CSV
-./postcodes-mysql | mysql -u root GNAF_201802
-```
-
 ## License ##
 
 This code is not covered by warranty or license. It is shared in the 

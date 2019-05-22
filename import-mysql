@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function extract_fields {
-    sed -n "/^CREATE TABLE.*\`$1\`/,/ENGINE/p" GNAF_structure.sql \
+    sed -n "/^CREATE TABLE.*\`$1\`/,/ENGINE/p" structure.sql \
         | grep -v ENGINE \
         | grep -v CREATE\ TABLE
 }
@@ -23,7 +23,7 @@ function sql_set_null {
         | sed 's/.*/\0 = NULLIF(@\0, "")/g ; $!s/$/,/'
 }
 
-cat GNAF_structure.sql
+cat structure.sql
 
 find . -name *.psv | while read -r file; do
     table=$(basename "$file" | sed 's/_psv\|.psv//g' \
@@ -44,4 +44,4 @@ find . -name *.psv | while read -r file; do
     echo
 done
 
-cat GNAF_fixes.sql GNAF_indexes.sql GNAF_address_search.sql
+cat fixes.sql indexes.sql address_search.sql australian_postcodes.sql
