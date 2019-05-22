@@ -2,6 +2,10 @@
 
 These tools are for manipulating G-NAF addressing data provided by PSMA.
 
+## License ##
+
+Copyright 2019 Superloop Limited (ASX: SLC.) Released under the BSD License by the Geospatial Information Systems (GIS) Department.
+
 ## MySQL Import ##
 
 To import data into MySQL or MariaDB, proceed with the following steps.
