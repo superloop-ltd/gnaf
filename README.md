@@ -23,7 +23,7 @@ The download link can be found at https://data.gov.au/dataset/geocoded-national-
 Download and unzip:
 
 ```
-wget https://data.gov.au/dataset/19432f89-dc3a-4ef3-b943-5326ef1dbecc/resource/4b084096-65e4-4c8e-abbe-5e54ff85f42f/download/feb18gnafpipeseparatedvalue20180219141901.zip
+wget https://data.gov.au/data/dataset/19432f89-dc3a-4ef3-b943-5326ef1dbecc/resource/4b084096-65e4-4c8e-abbe-5e54ff85f42f/download/may19_gnaf_pipeseparatedvalue_20190521155815.zip
 unzip `basename !$`
 ```
 
