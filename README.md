@@ -18,7 +18,7 @@ cd gnaf
 git clean -xdf
 ```
 
-The download link can be found at https://data.gov.au/dataset/geocoded-national-address-file-g-naf under 'Data and Resources', 'PSMA Geocoded National Address File', 'Explore', 'Go to resource.'
+The download link can be found at https://data.gov.au/dataset/geocoded-national-address-file-g-naf under 'Files and APIs' --> 'PSMA Geocoded National Address File (G-NAF)(ZIP).'
 
 Download and unzip:
 
