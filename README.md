@@ -43,11 +43,6 @@ time ./import-mysql | tee /dev/tty | mysql -u root $GNAFDB
 
 Allow a while for the import to process. It could take more than an hour depending on your hardware.
 
-## License ##
-
-This code is not covered by warranty or license. It is shared in the 
-public domain. Published by NuSkope Pty Ltd.
-
 ## Example Usage ##
 
 ### Locality-based Levenshtein Ranking ###
