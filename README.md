@@ -13,6 +13,8 @@ To import data into MySQL or MariaDB, proceed with the following steps.
 Delete old files if present:
 
 ```
+git clone git@github.com:superloop-ltd/gnaf.git
+cd gnaf
 git clean -xdf
 ```
 
@@ -25,16 +27,23 @@ wget https://data.gov.au/dataset/19432f89-dc3a-4ef3-b943-5326ef1dbecc/resource/4
 unzip `basename !$`
 ```
 
+Create database:
+
+```
+GNAFDB=GNAF_201905
+mysql -u root -e "CREATE DATABASE $GNAFDB"
+```
+
 Pipe the generate SQL script into the MySQL database:
 
 ```
-./import-mysql | mysql -u root GNAF_201802
+./import-mysql | mysql -u root $GNAFDB
 ```
 
 Or, if you want to watch the queries as they run and receive a record of how long the import took to execute in seconds:
 
 ```
-time ./import-mysql | tee /dev/tty | mysql -u root GNAF_201802
+time ./import-mysql | tee /dev/tty | mysql -u root $GNAFDB
 ```
 
 Allow time for the import to process. It could take more than an hour.
