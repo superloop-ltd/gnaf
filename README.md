@@ -82,4 +82,4 @@ This requires the [Levenshtein UDF](https://github.com/juanmirocks/Levenshtein-M
 
 ### Full-text ###
 
-Fulltext search is currently experimental.
+Fulltext search is currently experimental. We recommend using [Elasticsearch](https://www.elastic.co/products/elasticsearch)
