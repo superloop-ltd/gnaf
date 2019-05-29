@@ -1,4 +1,4 @@
-# Superloop G-NAF Import Tools for MySQL #
+# G-NAF Import Tools for MySQL #
 
 These tools are for manipulating G-NAF addressing data provided by [PSMA Australia](https://www.psma.com.au/).
 
