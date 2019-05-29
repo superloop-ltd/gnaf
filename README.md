@@ -4,7 +4,7 @@ These tools are for manipulating G-NAF addressing data provided by [PSMA Austral
 
 ## License ##
 
-Copyright 2019 Superloop Limited (ASX: SLC.) Released under the BSD License by the Geospatial Information Systems (GIS) Department.
+Copyright 2019 [Superloop Limited](https://www.superloop.com/) (ASX: SLC.) Released under the [BSD License](https://github.com/superloop-ltd/gnaf/blob/master/LICENSE) by the Geospatial Information Systems (GIS) Department.
 
 ## MySQL Import ##
 
