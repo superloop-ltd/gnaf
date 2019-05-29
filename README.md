@@ -1,6 +1,6 @@
 # Superloop G-NAF Import Tools for MySQL #
 
-These tools are for manipulating G-NAF addressing data provided by PSMA.
+These tools are for manipulating G-NAF addressing data provided by [PSMA Australia](https://www.psma.com.au/).
 
 ## License ##
 
@@ -8,7 +8,7 @@ Copyright 2019 Superloop Limited (ASX: SLC.) Released under the BSD License by t
 
 ## MySQL Import ##
 
-To import data into MySQL or MariaDB, proceed with the following steps.
+To import data into [MySQL](https://www.mysql.com/) or [MariaDB](https://mariadb.org/), proceed with the following steps.
 
 Delete old files if present:
 
